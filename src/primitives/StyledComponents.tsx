@@ -3,9 +3,9 @@ import tw from "tailwind-styled-components";
 let colors = { primarybg: "bg-rose-300" };
 
 export const LandingText = tw.h1`
-    text-4xl
+    text-6xl
     font-black
-    bg-clip-text text-transparent bg-gradient-to-tr from-emerald-200 to-lime-200
+    bg-clip-text text-transparent bg-gradient-to-tr from-emerald-300  to-lime-200
 `;
 
 export const Title = tw.h1`
@@ -13,11 +13,18 @@ export const Title = tw.h1`
     font-bold
     text-zinc-600
     dark:text-zinc-100
+    text-center
 `;
 
 export const Text = tw.p`
     text-zinc-600
     dark:text-zinc-100
+
+`;
+
+export const Desc = tw.p`
+    px-16 text-center
+    text-zinc-400
 `;
 
 export const Button = tw.button`

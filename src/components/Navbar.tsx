@@ -2,9 +2,11 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import {
   IoAddCircleOutline,
-  IoCog,
   IoCogOutline,
   IoHomeOutline,
+  IoReader,
+  IoReaderOutline,
+  IoWalletOutline,
 } from "react-icons/io5";
 
 function Navbar() {
@@ -18,7 +20,7 @@ function Navbar() {
               navData.isActive ? "text-teal-400 dark:text-teal-200" : ""
             }
           >
-            <IoHomeOutline
+            <IoWalletOutline
               size={30}
               className="hover:text-teal-300 transition"
             />
