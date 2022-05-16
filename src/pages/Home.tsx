@@ -67,7 +67,7 @@ function Home() {
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className={"font-semibold mb-2 " + (el.consumption.toFixed(2) < dashdata.consumption ? "text-green-500" : "text-rose-500")}>
+                  <p className={"font-semibold mb-2 " + (el.consumption.toFixed(2) < dashData.consumption ? "text-green-500" : "text-rose-500")}>
                     {el.consumption == 0
                       ? "No distance info"
                       : el.consumption.toFixed(2) + "l/100km"}
