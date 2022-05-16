@@ -28,7 +28,7 @@ function Home() {
       tmpPrice += el.price;
     });
     setDashData({
-      consumption: (tmpCons / data.length).toFixed(2),
+      consumption: (tmpCons / (data.length - 1)).toFixed(2),
       price: (tmpPrice / data.length).toFixed(2),
     });
   }
@@ -67,7 +67,7 @@ function Home() {
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className={"font-semibold mb-2 " + (el.consumption.toFixed(2) < dashData.consumption ? "text-green-500" : "text-rose-500")}>
+                  <p className={"font-semibold mb-2 " + (el.consumption.toFixed(2) < dashData.consumption ? "text-emerald-300" : "text-rose-300")}>
                     {el.consumption == 0
                       ? "No distance info"
                       : el.consumption.toFixed(2) + "l/100km"}
