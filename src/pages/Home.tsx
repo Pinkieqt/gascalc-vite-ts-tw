@@ -13,6 +13,11 @@ function Home() {
   const data = useContext(UsersDataContext) as GasEntry[];
   let navigate = useNavigate();
 
+  // Re-do this next time -> very bad
+  const [thisx, setThisx] = useState(false);
+  const [last, setLast] = useState(false);
+  const [later, setLater] = useState(false);
+
   useEffect(() => {
     getDashboardData();
   }, []);
@@ -22,7 +27,7 @@ function Home() {
     let tmpCons = 0;
     let tmpPrice = 0;
     data.forEach((el) => {
-      if (el.consumption > 0){
+      if (el.consumption > 0) {
         tmpCons += el.consumption;
       }
       tmpPrice += el.price;
@@ -31,6 +36,50 @@ function Home() {
       consumption: (tmpCons / (data.length - 1)).toFixed(2),
       price: (tmpPrice / data.length).toFixed(2),
     });
+  }
+
+  function returnCard(el: GasEntry) {
+    return (
+      <>
+        <Card
+          onClick={() => navigate(`/add_distance/${data.indexOf(el)}`)}
+          key={data.indexOf(el)}
+          className="hover:bg-zinc-200 hover:dark:bg-zinc-800 transition mb-2 cursor-pointer"
+        >
+          <div className="w-full rounded-xl flex justify-between items-center ">
+            <div className="rounded-full text-black bg-gradient-to-tr from-teal-200 to-lime-200 font-bold w-10 h-10 flex justify-center items-center mr-3">
+              {data.indexOf(el) + 1}
+            </div>
+            <div className="grow">
+              <p className="font-semibold">Paid: {el.paid} czk</p>
+              <p className="text-zinc-400 text-sm">
+                Price: {el.price.toFixed(2)} czk
+              </p>
+              <p className="text-zinc-400 text-sm">
+                Distance: {el.distance} km
+              </p>
+            </div>
+            <div className="text-right">
+              <p
+                className={
+                  "mb-2 " +
+                  (el.consumption.toFixed(2) < dashData.consumption
+                    ? "text-emerald-300"
+                    : "text-rose-400")
+                }
+              >
+                {el.consumption == 0
+                  ? "No distance info"
+                  : el.consumption.toFixed(2) + "l/100km"}
+              </p>
+              <p className="text-zinc-400 text-sm">
+                {getTimestampString(el.date)}
+              </p>
+            </div>
+          </div>
+        </Card>
+      </>
+    );
   }
 
   return (
@@ -42,44 +91,45 @@ function Home() {
 
       <Title className="mb-5">History</Title>
 
+      {/* This month */}
+      <div className="w-full">
+        <p className="mb-2 ml-5 text-sm">This month</p>
+        {data.map((el) => {
+          if (
+            data.indexOf(el) < currentPage * 10 &&
+            data.indexOf(el) > currentPage * 10 - 11 &&
+            el.date.toDate().getMonth() == new Date().getMonth() &&
+            el.date.toDate().getFullYear() == new Date().getFullYear()
+          ) {
+            return returnCard(el);
+          }
+        })}
+      </div>
+
+      {/* Last month */}
+      <p>Last month</p>
+      {data.map((el) => {
+        if (
+          data.indexOf(el) < currentPage * 10 &&
+          data.indexOf(el) > currentPage * 10 - 11 &&
+          el.date.toDate().getMonth() == new Date().getMonth() - 1 &&
+          el.date.toDate().getFullYear() == new Date().getFullYear()
+        ) {
+          return returnCard(el);
+        }
+      })}
+
+      {/* Later... */}
+      <p>Later...</p>
       {data.map((el) => {
         if (
           data.indexOf(el) < currentPage * 10 &&
           data.indexOf(el) > currentPage * 10 - 11
-        )
-          return (
-            <Card
-              onClick={() => navigate(`/add_distance/${data.indexOf(el)}`)}
-              key={data.indexOf(el)}
-              className="hover:bg-zinc-200 hover:dark:bg-zinc-800 transition mb-2 cursor-pointer"
-            >
-              <div className="w-full rounded-xl flex justify-between items-center ">
-                <div className="rounded-full text-black bg-gradient-to-tr from-teal-200 to-lime-200 font-bold w-10 h-10 flex justify-center items-center mr-3">
-                  {data.indexOf(el) + 1}
-                </div>
-                <div className="grow">
-                  <p className="font-semibold">Paid: {el.paid} czk</p>
-                  <p className="text-zinc-400 text-sm">
-                    Price: {el.price.toFixed(2)} czk
-                  </p>
-                  <p className="text-zinc-400 text-sm">
-                    Distance: {el.distance} km
-                  </p>
-                </div>
-                <div className="text-right">
-                  <p className={"mb-2 " + (el.consumption.toFixed(2) < dashData.consumption ? "text-emerald-300" : "text-rose-400")}>
-                    {el.consumption == 0
-                      ? "No distance info"
-                      : el.consumption.toFixed(2) + "l/100km"}
-                  </p>
-                  <p className="text-zinc-400 text-sm">
-                    {getTimestampString(el.date)}
-                  </p>
-                </div>
-              </div>
-            </Card>
-          );
+        ) {
+          return returnCard(el);
+        }
       })}
+
       {data.length > 10 && (
         <div className="w-full flex justify-center my-10">
           <div

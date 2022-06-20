@@ -11,6 +11,7 @@ import { auth, db } from "./utils/FirebaseConfig";
 import ProtectedRoute from "./utils/ProtectedRoute";
 import { useAuthListener } from "./utils/AuthListener";
 import { GasEntry, UsersData } from "./utils/Types";
+import Loading from "./pages/Loading";
 
 // Auth + usersdata context - here because of loading
 export const AuthContext = createContext(null);
@@ -41,7 +42,7 @@ function App() {
     <AuthContext.Provider value={currentUser}>
       <UsersDataContext.Provider value={usersData}>
         {isLoading ? (
-          <div>loading from app</div>
+          <Loading />
         ) : (
           <div className="min-h-screen bg-white dark:bg-black text-neutral-700 dark:text-neutral-100">
             <div className="container mx-auto p-2 pb-14">

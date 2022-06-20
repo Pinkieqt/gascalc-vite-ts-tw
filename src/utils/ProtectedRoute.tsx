@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import Loading from "../pages/Loading";
 import { useAuthListener } from "./AuthListener";
 
 interface PropType {
@@ -10,7 +11,7 @@ const ProtectedRoute: FC<PropType> = ({ component: Component }) => {
   const { loggedIn, checkingStatus } = useAuthListener();
 
   return checkingStatus ? (
-    <div>Loading</div>
+    <Loading />
   ) : loggedIn ? (
     <Component />
   ) : (
