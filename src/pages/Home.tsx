@@ -92,8 +92,10 @@ function Home() {
       <Title className="mb-5">History</Title>
 
       {/* This month */}
-      <div className="w-full">
-        <p className="mb-2 ml-5 text-sm">This month</p>
+      <div className="w-full ">
+        <div className="w-full flex justify-between p-2">
+          <p className="text-sm text-zinc-500">This month</p>
+        </div>
         {data.map((el) => {
           if (
             data.indexOf(el) < currentPage * 10 &&
@@ -107,29 +109,38 @@ function Home() {
       </div>
 
       {/* Last month */}
-      <p>Last month</p>
-      {data.map((el) => {
-        if (
-          data.indexOf(el) < currentPage * 10 &&
-          data.indexOf(el) > currentPage * 10 - 11 &&
-          el.date.toDate().getMonth() == new Date().getMonth() - 1 &&
-          el.date.toDate().getFullYear() == new Date().getFullYear()
-        ) {
-          return returnCard(el);
-        }
-      })}
+      <div className="w-full">
+        <div className="w-full flex justify-between p-2">
+          <p className="text-sm text-zinc-500">Last month</p>
+        </div>
+        {data.map((el) => {
+          if (
+            data.indexOf(el) < currentPage * 10 &&
+            data.indexOf(el) > currentPage * 10 - 11 &&
+            el.date.toDate().getMonth() == new Date().getMonth() - 1 &&
+            el.date.toDate().getFullYear() == new Date().getFullYear()
+          ) {
+            return returnCard(el);
+          }
+        })}
+      </div>
 
       {/* Later... */}
-      <p>Later...</p>
-      {data.map((el) => {
-        if (
-          data.indexOf(el) < currentPage * 10 &&
-          data.indexOf(el) > currentPage * 10 - 11
-        ) {
-          return returnCard(el);
-        }
-      })}
-
+      <div className="w-full">
+        <div className="w-full flex justify-between p-2">
+          <p className="text-sm text-zinc-500">Later...</p>
+        </div>
+        {data.map((el) => {
+          if (
+            data.indexOf(el) < currentPage * 10 &&
+            data.indexOf(el) > currentPage * 10 - 11 &&
+            el.date.toDate().getMonth() < new Date().getMonth() - 1 &&
+            el.date.toDate().getFullYear() == new Date().getFullYear()
+          ) {
+            return returnCard(el);
+          }
+        })}
+      </div>
       {data.length > 10 && (
         <div className="w-full flex justify-center my-10">
           <div
