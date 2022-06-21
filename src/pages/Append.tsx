@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import DatePicker from "react-datepicker";
+// import DatePicker from "react-datepicker";
 
-import "react-datepicker/dist/react-datepicker.css";
+// import "react-datepicker/dist/react-datepicker.css";
 import { HandleNumpadClick } from "../services/NumPadService";
 import Keyboard from "../components/Keyboard";
 import { Button, LandingText } from "../primitives/StyledComponents";
@@ -54,7 +54,7 @@ function Append() {
       {isFirstPage ? (
         <>
           {/* Datepicker */}
-          <div className="w-full flex justify-center items-center">
+          {/* <div className="w-full flex justify-center items-center">
             <DatePicker
               dateFormat="dd.MM. yyyy"
               selected={startDate}
@@ -63,7 +63,7 @@ function Append() {
               disabledKeyboardNavigation
               className="text-center dark:bg-zinc-900 bg-zinc-100 rounded-lg py-1 mb-2 cursor-pointer"
             />
-          </div>
+          </div> */}
 
           {/* Heading */}
           <div className="flex justify-around bg-zinc-100 dark:bg-zinc-900 rounded-lg">
@@ -110,7 +110,7 @@ function Append() {
         </>
       ) : (
         <>
-          {/* DatePicker */}
+          {/* DatePicker
           <div className="w-full flex justify-center items-center">
             <DatePicker
               dateFormat="dd.MM. yyyy"
@@ -120,7 +120,7 @@ function Append() {
               disabledKeyboardNavigation
               className="text-center dark:bg-zinc-900 bg-zinc-100 rounded-lg py-1 mb-2 cursor-pointer"
             />
-          </div>
+          </div> */}
 
           {/* Heading */}
           <div className="flex justify-around bg-zinc-100  dark:bg-zinc-900 rounded-lg">
