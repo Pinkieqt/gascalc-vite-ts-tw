@@ -94,7 +94,9 @@ function Home() {
       {/* This month */}
       <div className="w-full ">
         <div className="w-full flex justify-between p-2">
-          <p className="text-sm text-zinc-500">Tento měsíc</p>
+          {data.find(
+            (date) => date.date.toDate().getMonth() == new Date().getMonth()
+          ) && <p className="text-sm text-zinc-500">Tento měsíc</p>}
         </div>
         {data.map((el) => {
           if (
@@ -111,7 +113,9 @@ function Home() {
       {/* Last month */}
       <div className="w-full">
         <div className="w-full flex justify-between p-2">
-          <p className="text-sm text-zinc-500">Poslední měsíc</p>
+          {data.find(
+            (date) => date.date.toDate().getMonth() == new Date().getMonth() - 1
+          ) && <p className="text-sm text-zinc-500">Minulý měsíc</p>}
         </div>
         {data.map((el) => {
           if (
@@ -128,7 +132,9 @@ function Home() {
       {/* Later... */}
       <div className="w-full">
         <div className="w-full flex justify-between p-2">
-          <p className="text-sm text-zinc-500">Později...</p>
+          {data.find(
+            (date) => date.date.toDate().getMonth() < new Date().getMonth() - 1
+          ) && <p className="text-sm text-zinc-500">Později...</p>}
         </div>
         {data.map((el) => {
           if (

@@ -10,6 +10,8 @@ import { GasEntry } from "../utils/Types";
 import { Timestamp } from "firebase/firestore";
 import { UsersDataContext } from "../App";
 import { uploadDoc } from "../utils/FirebaseConfig";
+import ReactDatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 function Append() {
   let navigate = useNavigate();
@@ -54,8 +56,8 @@ function Append() {
       {isFirstPage ? (
         <>
           {/* Datepicker */}
-          {/* <div className="w-full flex justify-center items-center">
-            <DatePicker
+          <div className="w-full flex justify-center items-center">
+            <ReactDatePicker
               dateFormat="dd.MM. yyyy"
               selected={startDate}
               onChange={(date: Date) => setStartDate(date)}
@@ -63,7 +65,7 @@ function Append() {
               disabledKeyboardNavigation
               className="text-center dark:bg-zinc-900 bg-zinc-100 rounded-lg py-1 mb-2 cursor-pointer"
             />
-          </div> */}
+          </div>
 
           {/* Heading */}
           <div className="flex justify-around bg-zinc-100 dark:bg-zinc-900 rounded-lg">
@@ -111,9 +113,9 @@ function Append() {
         </>
       ) : (
         <>
-          {/* DatePicker
+          {/* DatePicker */}
           <div className="w-full flex justify-center items-center">
-            <DatePicker
+            <ReactDatePicker
               dateFormat="dd.MM. yyyy"
               selected={startDate}
               onChange={(date: Date) => setStartDate(date)}
@@ -121,7 +123,7 @@ function Append() {
               disabledKeyboardNavigation
               className="text-center dark:bg-zinc-900 bg-zinc-100 rounded-lg py-1 mb-2 cursor-pointer"
             />
-          </div> */}
+          </div>
 
           {/* Heading */}
           <div className="flex justify-around bg-zinc-100  dark:bg-zinc-900 rounded-lg">
