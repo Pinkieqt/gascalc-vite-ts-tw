@@ -12,7 +12,7 @@ import {
 function Navbar() {
   return (
     <div className="fixed bottom-0 md:bottom-3 w-full md:w-1/5 px-3 py-1">
-      <div className="h-14 bg-slate-100 dark:bg-zinc-700 rounded-2xl md:rounded-xl">
+      <div className="h-14 backdrop-blur-sm bg-slate-100/30 dark:bg-zinc-700/30 rounded-2xl md:rounded-xl ">
         <div className="flex h-full justify-between items-center">
           <div className="w-1/3 text-center rounded-lg h-14 flex justify-center items-center">
             <NavLink

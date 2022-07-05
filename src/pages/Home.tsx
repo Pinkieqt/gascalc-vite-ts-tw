@@ -14,7 +14,7 @@ function Home() {
   let navigate = useNavigate();
 
   // Re-do this next time -> very bad
-  const [thisx, setThisx] = useState(false);
+  const [thisData, setThisData] = useState(false);
   const [last, setLast] = useState(false);
   const [later, setLater] = useState(false);
 
