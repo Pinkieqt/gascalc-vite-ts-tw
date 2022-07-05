@@ -17,10 +17,15 @@ function Settings() {
       });
   }
 
+  // theme
+  function changeTheme() {}
+
   return (
     <div className="p-3 pb-16">
       <Title>Nastavení</Title>
-      <h1 className="text-center text-xl my-20">Tady nic není 😒😒😒</h1>
+      <h1 className="text-center text-xl mt-20">Tady nic není 😒😒😒</h1>
+      <h1 className="text-center text-xl">a ani nebude jelikož</h1>
+      <h1 className="text-center text-xl mb-20">... bude nová appka 😒</h1>
 
       {/* logout */}
       <div className="w-full flex justify-center items-center mt-5">

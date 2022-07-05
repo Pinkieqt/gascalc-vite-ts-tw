@@ -29,8 +29,8 @@ export const uploadDoc = async (data: GasEntry[], isAdding: boolean) => {
   await setDoc(doc(db, "users", auth.currentUser!.uid), { data })
     .then(() => {
       isAdding
-        ? toast.success("Added succesfully")
-        : toast.success("Removed succesfully");
+        ? toast.success("Úspěšně přidáno")
+        : toast.success("Úspěšně odstraněno");
     })
     .catch(() => {
       toast.error("Error");
