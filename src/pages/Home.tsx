@@ -69,7 +69,7 @@ function Home() {
                 }
               >
                 {el.consumption == 0
-                  ? "No distance info"
+                  ? "Žádné info"
                   : el.consumption.toFixed(2) + "l/100km"}
               </p>
               <p className="text-zinc-400 text-sm">
@@ -84,17 +84,17 @@ function Home() {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <LandingText>Hello,</LandingText>
-      <Desc>add your data and see how economical you are!</Desc>
+      <LandingText>Vítej,</LandingText>
+      <Desc>zapiš svá data a získej přehled o tvých jízdách.</Desc>
 
       <HomeStats consumption={dashData.consumption} price={dashData.price} />
 
-      <Title className="mb-5">History</Title>
+      <Title className="text-xl mb-5">Historie</Title>
 
       {/* This month */}
       <div className="w-full ">
         <div className="w-full flex justify-between p-2">
-          <p className="text-sm text-zinc-500">This month</p>
+          <p className="text-sm text-zinc-500">Tento měsíc</p>
         </div>
         {data.map((el) => {
           if (
@@ -111,7 +111,7 @@ function Home() {
       {/* Last month */}
       <div className="w-full">
         <div className="w-full flex justify-between p-2">
-          <p className="text-sm text-zinc-500">Last month</p>
+          <p className="text-sm text-zinc-500">Poslední měsíc</p>
         </div>
         {data.map((el) => {
           if (
@@ -128,7 +128,7 @@ function Home() {
       {/* Later... */}
       <div className="w-full">
         <div className="w-full flex justify-between p-2">
-          <p className="text-sm text-zinc-500">Later...</p>
+          <p className="text-sm text-zinc-500">Později...</p>
         </div>
         {data.map((el) => {
           if (

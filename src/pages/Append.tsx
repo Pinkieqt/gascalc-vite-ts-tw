@@ -50,7 +50,7 @@ function Append() {
   }
 
   return (
-    <div className="w-full">
+    <div className="w-full md:w-1/3">
       {isFirstPage ? (
         <>
           {/* Datepicker */}
@@ -68,7 +68,7 @@ function Append() {
           {/* Heading */}
           <div className="flex justify-around bg-zinc-100 dark:bg-zinc-900 rounded-lg">
             <a className="w-1/2 px-3 py-2 text-center font-semibold bg-zinc-200 dark:bg-zinc-800 rounded-lg m-1 cursor-pointer">
-              Money paid
+              Zaplaceno
             </a>
             <a
               className="w-1/2 m-1 cursor-pointer text-center px-3 py-2"
@@ -79,16 +79,16 @@ function Append() {
                 } else setIsWrongInput(true);
               }}
             >
-              Price per liter
+              Cena za litr
             </a>
           </div>
-          <h1 className="text-center text-sm mt-2">How much did you pay?</h1>
+          <h1 className="text-center text-sm mt-2  md:my-10">
+            Kolik jsi platil?
+          </h1>
           <LandingText className="text-center text-5xl">{price}</LandingText>
           <p className="text-center text-sm mb-2 text-zinc-400">czk</p>
           {isWrongInput && (
-            <p className="text-center text-rose-400">
-              You have to enter a value!
-            </p>
+            <p className="text-center text-rose-400">Vlož nějakou hodnotu!</p>
           )}
 
           {/* Keyboard */}
@@ -97,6 +97,7 @@ function Append() {
           {/* submit */}
           <div className="w-full flex justify-center items-center mt-5">
             <Button
+              className=" md:my-10"
               onClick={() => {
                 if (parseFloat(price) > 0) {
                   setIsFirstPage(!isFirstPage);
@@ -104,7 +105,7 @@ function Append() {
                 } else setIsWrongInput(true);
               }}
             >
-              Next
+              Pokračovat
             </Button>
           </div>
         </>
@@ -128,28 +129,28 @@ function Append() {
               className="w-1/2 m-1 cursor-pointer text-center px-3 py-2"
               onClick={() => setIsFirstPage(!isFirstPage)}
             >
-              Money paid
+              Zaplaceno
             </a>
             <a className="w-1/2 px-3 py-2 text-center font-semibold bg-zinc-200 dark:bg-zinc-800 rounded-lg m-1 cursor-pointer">
-              Price per liter
+              Cena za litr
             </a>
           </div>
-          <h1 className="text-center text-sm mt-2">
-            What is the price of one liter?
+          <h1 className="text-center text-sm mt-2  md:my-10">
+            Jaká byla cena za litr paliva?
           </h1>
           <LandingText className="text-center text-5xl">{gasPrice}</LandingText>
-          <p className="text-center text-sm mb-2 text-zinc-400">czk</p>
+          <p className="text-center text-sm mb-2 text-zinc-400">czk / l</p>
           {isWrongInput && (
-            <p className="text-center text-rose-400">
-              You have to enter a value!
-            </p>
+            <p className="text-center text-rose-400">Vlož nějakou hodnotu!</p>
           )}
           {/* Keyboard */}
           <Keyboard handleClick={handleGasPriceNumpadClick} />
 
           {/* submit */}
           <div className="w-full flex justify-center items-center mt-5">
-            <Button onClick={() => submit()}>Submit</Button>
+            <Button className=" md:my-10" onClick={() => submit()}>
+              Uložit
+            </Button>
           </div>
         </>
       )}

@@ -52,12 +52,12 @@ function AddDistance() {
   }
 
   return (
-    <div className="w-full">
+    <div className="w-full md:w-1/3">
       <Card>
         <div className="w-full  p-2 rounded-2xl flex justify-between items-center">
           <div className="grow">
             <p className="font-semibold">
-              Paid:&nbsp;
+              Zaplaceno:&nbsp;
               {data[0] == undefined
                 ? "0"
                 : data[parseInt(entryId == undefined ? "0" : entryId)]
@@ -65,7 +65,7 @@ function AddDistance() {
               czk
             </p>
             <p className="text-zinc-400 text-sm">
-              Price:&nbsp;
+              Cena za litr:&nbsp;
               {data[0] == undefined
                 ? "0"
                 : data[
@@ -74,7 +74,7 @@ function AddDistance() {
               czk
             </p>
             <p className="text-zinc-400 text-sm">
-              Distance:&nbsp;
+              Ujetá vzdálenost:&nbsp;
               {data[0] == undefined
                 ? "0"
                 : data[parseInt(entryId == undefined ? "0" : entryId)]
@@ -109,8 +109,8 @@ function AddDistance() {
         </div>
       </Card>
 
-      <h1 className="text-center text-sm mt-2">
-        What distance did you cover on this tank?
+      <h1 className="text-center text-sm mt-2 md:my-10">
+        Jakou vzdálenost jsi ujel na nádrž?
       </h1>
       <LandingText className="text-center text-5xl">{dist}</LandingText>
       <p className="text-center text-sm mb-2 text-zinc-400">km</p>
@@ -119,7 +119,9 @@ function AddDistance() {
 
       {/* submit */}
       <div className="w-full flex justify-center items-center mt-5">
-        <Button onClick={() => submit()}>Submit</Button>
+        <Button className=" md:my-10" onClick={() => submit()}>
+          Uložit
+        </Button>
       </div>
     </div>
   );

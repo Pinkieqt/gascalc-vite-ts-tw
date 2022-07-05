@@ -6,6 +6,7 @@ import AddDistance from "./pages/AddDistance";
 import Append from "./pages/Append";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 import Settings from "./pages/Settings";
 import { auth, db } from "./utils/FirebaseConfig";
 import ProtectedRoute from "./utils/ProtectedRoute";
@@ -47,7 +48,9 @@ function App() {
           <div className="min-h-screen bg-white dark:bg-black text-neutral-700 dark:text-neutral-100">
             <div className="container mx-auto p-2 pb-14">
               <div className="w-full flex justify-center">
-                {loc.pathname !== "/login" && <Navbar />}
+                {loc.pathname !== "/login" && loc.pathname !== "/register" && (
+                  <Navbar />
+                )}
                 <Routes>
                   <Route
                     path="/"
@@ -62,6 +65,7 @@ function App() {
                     element={<ProtectedRoute component={Append} />}
                   />
                   <Route path="login" element={<Login />} />
+                  <Route path="register" element={<Register />} />
                   <Route
                     path="*"
                     element={<ProtectedRoute component={Home} />}

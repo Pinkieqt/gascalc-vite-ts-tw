@@ -4,6 +4,7 @@ let colors = { primarybg: "bg-rose-300" };
 
 export const LandingText = tw.h1`
     text-6xl
+    pb-2
     font-black
     bg-clip-text text-transparent bg-gradient-to-tr from-emerald-300  to-lime-200
 `;
@@ -28,7 +29,7 @@ export const Desc = tw.p`
 `;
 
 export const Button = tw.button`
-    px-10 py-3 w-40 rounded-xl text-center font-medium
+    px-10 py-3 w-56 rounded-xl text-center font-medium
     transition shadow-lg shadow-teal-300/50
     text-emerald-900
     bg-emerald-200 dark:bg-emerald-400 
@@ -36,7 +37,7 @@ export const Button = tw.button`
 `;
 
 export const TextInput = tw.input`
-    px-3 py-3 w-40 rounded-xl
+    px-3 py-3 w-56 rounded-xl
     transition 
     focus:shadow-lg focus:shadow-teal-400/50 focus:ring-2 focus:ring-emerald-200 focus:outline-none
     bg-neutral-100 dark:bg-neutral-800 
