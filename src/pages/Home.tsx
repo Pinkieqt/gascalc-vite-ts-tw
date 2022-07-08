@@ -32,8 +32,11 @@ function Home() {
       }
       tmpPrice += el.price;
     });
+    let tmpConsum = (tmpCons / (data.length - 1)).toFixed(2)
+    if (data.length - 1 == 0) 
+      tmpConsum = tmpCons.toFixed(2)
     setDashData({
-      consumption: (tmpCons / (data.length - 1)).toFixed(2),
+      consumption: tmpConsum,
       price: (tmpPrice / data.length).toFixed(2),
     });
   }
