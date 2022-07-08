@@ -33,12 +33,15 @@ function Home() {
       tmpPrice += el.price;
     });
     let tmpConsum = (tmpCons / (data.length)).toFixed(2)
-    if (data.length - 1 == 0) 
-      tmpConsum = tmpCons.toFixed(2)
+    'if (data.length - 1 == 0) 
+      'tmpConsum = tmpCons.toFixed(2)
     setDashData({
       consumption: tmpConsum,
       price: (tmpPrice / data.length).toFixed(2),
     });
+    
+    console.log(tmpConsum);
+    console.log(data.length);
   }
 
   function returnCard(el: GasEntry) {
