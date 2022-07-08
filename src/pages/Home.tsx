@@ -19,7 +19,6 @@ function Home() {
   const [later, setLater] = useState(false);
 
   useEffect(() => {
-    console.log("useeffect");
     getDashboardData();
   }, []);
 
@@ -27,7 +26,6 @@ function Home() {
   function getDashboardData() {
     let tmpCons = 0;
     let tmpPrice = 0;
-    console.log("ahoj ");
     data.forEach((el) => {
       if (el.consumption > 0) {
         tmpCons += el.consumption;
@@ -35,8 +33,6 @@ function Home() {
       tmpPrice += el.price;
     });
     let tmpConsum = (tmpCons / (data.length)).toFixed(2)
-    console.log(tmpConsum);
-    console.log(data.length);
     setDashData({
       consumption: tmpConsum,
       price: (tmpPrice / data.length).toFixed(2),
