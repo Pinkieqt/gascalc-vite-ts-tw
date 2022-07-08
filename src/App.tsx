@@ -19,6 +19,7 @@ export const AuthContext = createContext(null);
 export const UsersDataContext = createContext<GasEntry[]>([]);
 
 function App() {
+  //something just to refresh cache
   const [currentUser, setCurrentUser] = useState(null);
   const [usersData, setUsersData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
