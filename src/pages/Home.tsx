@@ -19,6 +19,7 @@ function Home() {
   const [later, setLater] = useState(false);
 
   useEffect(() => {
+    console.log("useeffect");
     getDashboardData();
   }, []);
 
@@ -26,6 +27,7 @@ function Home() {
   function getDashboardData() {
     let tmpCons = 0;
     let tmpPrice = 0;
+    console.log("ahoj ");
     data.forEach((el) => {
       if (el.consumption > 0) {
         tmpCons += el.consumption;
@@ -33,7 +35,6 @@ function Home() {
       tmpPrice += el.price;
     });
     let tmpConsum = (tmpCons / (data.length)).toFixed(2)
-    console.log("ahoj ");
     console.log(tmpConsum);
     console.log(data.length);
     setDashData({
@@ -55,12 +56,12 @@ function Home() {
               {data.indexOf(el) + 1}
             </div>
             <div className="grow">
-              <p className="font-semibold">Paid: {el.paid} czk</p>
+              <p className="font-semibold">Zaplaceno: {el.paid} czk</p>
               <p className="text-zinc-400 text-sm">
-                Price: {el.price.toFixed(2)} czk
+                Cena za litr: {el.price.toFixed(2)} czk
               </p>
               <p className="text-zinc-400 text-sm">
-                Distance: {el.distance} km
+                Ujetá vzdálenost: {el.distance} km
               </p>
             </div>
             <div className="text-right">
