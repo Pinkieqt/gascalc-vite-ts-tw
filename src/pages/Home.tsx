@@ -77,7 +77,7 @@ function Home() {
                 {getTimestampString(el.date)}
               </p>
               <p className="text-zinc-400 text-sm">
-                Množství {(el.paid / el.price).toFixed(2)} l
+                {(el.paid / el.price).toFixed(2)} l
               </p>
             </div>
           </div>
