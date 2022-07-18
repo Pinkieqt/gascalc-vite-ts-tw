@@ -63,7 +63,7 @@ function Home() {
             <div className="text-right">
               <p
                 className={
-                  "mb-2 " +
+                  " " +
                   (el.consumption.toFixed(2) < dashData.consumption
                     ? "text-emerald-300"
                     : "text-rose-400")
