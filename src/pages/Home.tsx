@@ -33,7 +33,7 @@ function Home() {
       tmpPrice += el.price;
     });
     let tmpConsum = (tmpCons / (data.length)).toFixed(2)
-    console.log(tmpPrice)
+    console.log(tmpCons)
     console.log(data.length)
     setDashData({
       consumption: tmpConsum,
