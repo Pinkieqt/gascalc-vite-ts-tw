@@ -101,7 +101,7 @@ function Home() {
       <LandingText>Vítej,</LandingText>
       <Desc>zapiš svá data a získej přehled o tvých jízdách.</Desc>
 
-      <HomeStats consumption={dashData.consumption} price={dashData.price} />
+      <HomeStats consumption={dashData.consumption} price={dashData.price} totalpaid={dashData.totalpaid} avgdist={dashData.avgdist} />
 
       <Title className="text-xl mb-5">Historie</Title>
 
