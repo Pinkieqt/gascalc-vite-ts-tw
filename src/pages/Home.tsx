@@ -44,8 +44,8 @@ function Home() {
     setDashData({
       consumption: tmpConsum,
       price: (tmpPrice / data.length).toFixed(2),
-      totalpaid: (tmpPaid).toFixed(2),
-      avgdist: (tmpDist / data.length).toFixed(2),
+      totalpaid: (tmpPaid).toFixed(0),
+      avgdist: (tmpDist / data.length).toFixed(0),
     });
   }
 
