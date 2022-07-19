@@ -7,8 +7,8 @@ interface PropTypes {
 
 function HomeStats(data: PropTypes) {
   return (
-    <div>
-    <div className="shadow-card rounded-xl w-full my-5 bg-teal-200 bg-opacity-10 dark:bg-opacity-20">
+    <div className="w-full>
+    <div className="shadow-card rounded-xl w-full my-2 bg-teal-200 bg-opacity-10 dark:bg-opacity-20">
       <div className="flex justify-around items-center py-4">
         <div className="text-center w-1/2 border-r border-slate-400">
           <div className="text-sm text-teal-500 dark:text-teal-200">
@@ -29,18 +29,18 @@ function HomeStats(data: PropTypes) {
     <div className="shadow-card rounded-xl w-full my-5 bg-rose-200 bg-opacity-10 dark:bg-opacity-20">
       <div className="flex justify-around items-center py-4">
         <div className="text-center w-1/2 border-r border-slate-400">
-          <div className="text-sm text-teal-500 dark:text-teal-200">
-            průměrná spotřeba
+          <div className="text-sm text-rose-500 dark:text-rose-200">
+            zaplaceno celkem
           </div>
-          <div className="text-4xl font-bold">{data.consumption}</div>
-          <div className="text-xs text-zinc-400">l/100km</div>
+          <div className="text-4xl font-bold">{data.totalpaid}</div>
+          <div className="text-xs text-zinc-400">czk</div>
         </div>
         <div className="text-center w-1/2">
           <div className="text-sm text-teal-500 dark:text-teal-200">
-            průměrná cena
+            průměrný dojezd
           </div>
-          <div className="text-4xl font-bold">{data.price}</div>
-          <div className="text-xs text-zinc-400">czk/l</div>
+          <div className="text-4xl font-bold">{data.avgdist}</div>
+          <div className="text-xs text-zinc-400">km</div>
         </div>
       </div>
     </div>
