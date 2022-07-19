@@ -40,12 +40,11 @@ function Home() {
       tmpPrice += el.price;
       tmpPaid += el.paid
     });
-    let tmpConsum = (tmpCons / (data.length - zeroCounter)).toFixed(2)
     setDashData({
-      consumption: tmpConsum,
+      consumption: (tmpCons / (data.length - zeroCounter)).toFixed(2),
       price: (tmpPrice / data.length).toFixed(2),
       totalpaid: (tmpPaid).toFixed(0),
-      avgdist: (tmpDist / data.length).toFixed(0),
+      avgdist: (tmpDist / (data.length - zeroCounter)).toFixed(0),
     });
   }
 
