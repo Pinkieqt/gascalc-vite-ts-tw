@@ -38,7 +38,7 @@ function HomeStats(data: PropTypes) {
             <div className="text-xs text-zinc-400">czk</div>
           </div>
           <div className="text-center w-1/2">
-            <div className="text-sm text-teal-500 dark:text-teal-200">
+            <div className="text-sm text-rose-500 dark:text-rose-200">
               průměrný dojezd
             </div>
             <div className="text-4xl font-bold">{data.avgdist}</div>
