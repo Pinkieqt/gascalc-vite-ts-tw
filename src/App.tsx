@@ -57,7 +57,7 @@ function App() {
           <Loading />
         ) : (
           <div className="min-h-screen bg-white dark:bg-black text-neutral-700 dark:text-neutral-100">
-            <div className="container mx-auto p-2 pb-14">
+            <div className="container mx-auto p-2 pb-20">
               <div className="w-full flex justify-center">
                 {loc.pathname !== "/login" && loc.pathname !== "/register" && (
                   <Navbar />
