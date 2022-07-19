@@ -8,7 +8,7 @@ import { getTimestampString } from "../utils/FirebaseConfig";
 import { GasEntry, UsersData } from "../utils/Types";
 
 function Home() {
-  const [dashData, setDashData] = useState({ consumption: "", price: "" });
+  const [dashData, setDashData] = useState({ consumption: "", price: "", totalpaid: "", avgdist: "" });
   const [currentPage, setCurrentPage] = useState(1);
   const data = useContext(UsersDataContext) as GasEntry[];
   let navigate = useNavigate();
@@ -26,20 +26,26 @@ function Home() {
   function getDashboardData() {
     let tmpCons = 0;
     let tmpPrice = 0;
+    let tmpDist = 0;
+    let tmpPaid = 0
     let zeroCounter = 0;
     data.forEach((el) => {
       if (el.consumption > 0) {
         tmpCons += el.consumption;
+        tmpDist += el.distance;
       }
       else {
         zeroCounter += 1;
       }
       tmpPrice += el.price;
+      tmpPaid += el.paid
     });
     let tmpConsum = (tmpCons / (data.length - zeroCounter)).toFixed(2)
     setDashData({
       consumption: tmpConsum,
       price: (tmpPrice / data.length).toFixed(2),
+      totalpaid: (tmpPaid).toFixed(2),
+      avgdist: (tmpDist / data.length).toFixed(2),
     });
   }
 
