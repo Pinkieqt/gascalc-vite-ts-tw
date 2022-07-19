@@ -3,6 +3,8 @@ import React from "react";
 interface PropTypes {
   consumption: string;
   price: string;
+  totalpaid: string;
+  avgdist: string;
 }
 
 function HomeStats(data: PropTypes) {
