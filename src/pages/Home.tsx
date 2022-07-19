@@ -26,15 +26,17 @@ function Home() {
   function getDashboardData() {
     let tmpCons = 0;
     let tmpPrice = 0;
+    let zeroCounter = 0;
     data.forEach((el) => {
       if (el.consumption > 0) {
         tmpCons += el.consumption;
       }
+      else {
+        zeroCounter += 1;
+      }
       tmpPrice += el.price;
     });
-    let tmpConsum = (tmpCons / (data.length)).toFixed(2)
-    console.log(tmpCons)
-    console.log(data.length)
+    let tmpConsum = (tmpCons / (data.length - zeroCounter)).toFixed(2)
     setDashData({
       consumption: tmpConsum,
       price: (tmpPrice / data.length).toFixed(2),
