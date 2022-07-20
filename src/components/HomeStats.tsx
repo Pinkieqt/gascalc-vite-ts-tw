@@ -12,8 +12,8 @@ interface PropTypes {
 function HomeStats(data: PropTypes) {
   return (
     <div className="w-full">
-      <div className="shadow-card rounded-xl w-full my-1 bg-teal-200 bg-opacity-10 dark:bg-opacity-20">
-        <div className="flex justify-around items-center pt-4 pb-1">
+      <div className="shadow-card rounded-xl w-full mt-5 mb-1 bg-teal-200 bg-opacity-10 dark:bg-opacity-20">
+        <div className="flex justify-around items-center py-2>
           <div className="text-center w-1/2 border-r border-slate-400">
             <div className="text-sm text-teal-500 dark:text-teal-200">
               průměrná spotřeba
@@ -30,8 +30,8 @@ function HomeStats(data: PropTypes) {
           </div>
         </div>
       </div>
-      <div className="shadow-card rounded-xl w-full my-5 bg-rose-200 bg-opacity-10 dark:bg-opacity-20">
-        <div className="flex justify-around items-center py-1">
+      <div className="shadow-card rounded-xl w-full my-1 bg-rose-200 bg-opacity-10 dark:bg-opacity-20">
+        <div className="flex justify-around items-center py-2">
           <div className="text-center w-1/2 border-r border-slate-400">
             <div className="text-sm text-rose-500 dark:text-rose-200">
               průměrně natankováno
@@ -48,8 +48,8 @@ function HomeStats(data: PropTypes) {
           </div>
         </div>
       </div>
-      <div className="shadow-card rounded-xl w-full my-5 bg-violet-200 bg-opacity-10 dark:bg-opacity-20">
-        <div className="flex justify-around items-center py-1">
+      <div className="shadow-card rounded-xl w-full my-1 bg-violet-200 bg-opacity-10 dark:bg-opacity-20">
+        <div className="flex justify-around items-center py-2">
           <div className="text-center w-1/2 border-r border-slate-400">
             <div className="text-sm text-violet-500 dark:text-rose-200">
               celkem zaplaceno
