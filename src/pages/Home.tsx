@@ -101,7 +101,7 @@ function Home() {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <LandingText>Vítej,</LandingText>
+      <LandingText className="mt-10">Vítej,</LandingText>
       <Desc>zapiš svá data a získej přehled o tvých jízdách.</Desc>
 
       <HomeStats consumption={dashData.consumption} price={dashData.price} totalpaid={dashData.totalpaid} avgdist={dashData.avgdist} avgliter={dashData.avgliter} totaltank={dashData.totaltank} />
