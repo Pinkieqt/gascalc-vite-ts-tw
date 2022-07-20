@@ -13,7 +13,7 @@ function HomeStats(data: PropTypes) {
   return (
     <div className="w-full">
       <div className="shadow-card rounded-xl w-full mt-5 mb-1 bg-teal-200 bg-opacity-10 dark:bg-opacity-20">
-        <div className="flex justify-around items-center py-2>
+        <div className="flex justify-around items-center py-2">
           <div className="text-center w-1/2 border-r border-slate-400">
             <div className="text-sm text-teal-500 dark:text-teal-200">
               průměrná spotřeba
