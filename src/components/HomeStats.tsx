@@ -52,14 +52,14 @@ function HomeStats(data: PropTypes) {
         <div className="flex justify-around items-center py-2">
           <div className="text-center w-1/2 border-r border-slate-400">
             <div className="text-sm text-violet-500 dark:text-rose-200">
-              celkem nádrží
+              celkem zaplaceno
             </div>
             <div className="text-3xl font-bold">{data.totalpaid}</div>
             <div className="text-xs text-zinc-400">czk</div>
           </div>
           <div className="text-center w-1/2">
             <div className="text-sm text-violet-500 dark:text-rose-200">
-              průměrný dojezd
+              počet tankování
             </div>
             <div className="text-3xl font-bold">{data.totaltank}</div>
             <div className="text-xs text-zinc-400"></div>
