@@ -8,7 +8,7 @@ import { getTimestampString } from "../utils/FirebaseConfig";
 import { GasEntry, UsersData } from "../utils/Types";
 
 function Home() {
-  const [dashData, setDashData] = useState({ consumption: "", price: "", totalpaid: "", avgdist: "" });
+  const [dashData, setDashData] = useState({ consumption: "", price: "", totalpaid: "", avgdist: "", avgliter: "", totaltank: "" });
   const [currentPage, setCurrentPage] = useState(1);
   const data = useContext(UsersDataContext) as GasEntry[];
   let navigate = useNavigate();
@@ -27,7 +27,8 @@ function Home() {
     let tmpCons = 0;
     let tmpPrice = 0;
     let tmpDist = 0;
-    let tmpPaid = 0
+    let tmpPaid = 0;
+    let tmpLiter = 0;
     let zeroCounter = 0;
     data.forEach((el) => {
       if (el.consumption > 0) {
@@ -37,6 +38,7 @@ function Home() {
       else {
         zeroCounter += 1;
       }
+      tmpLiter += (el.paid / el.price)
       tmpPrice += el.price;
       tmpPaid += el.paid
     });
@@ -45,6 +47,8 @@ function Home() {
       price: (tmpPrice / data.length).toFixed(2),
       totalpaid: (tmpPaid).toFixed(0),
       avgdist: (tmpDist / (data.length - zeroCounter)).toFixed(0),
+      avgliter: (tmpLiter).toFixed(0),
+      totaltank: data.length,
     });
   }
 
@@ -100,7 +104,7 @@ function Home() {
       <LandingText>Vítej,</LandingText>
       <Desc>zapiš svá data a získej přehled o tvých jízdách.</Desc>
 
-      <HomeStats consumption={dashData.consumption} price={dashData.price} totalpaid={dashData.totalpaid} avgdist={dashData.avgdist} />
+      <HomeStats consumption={dashData.consumption} price={dashData.price} totalpaid={dashData.totalpaid} avgdist={dashData.avgdist} avgliter={dashData.avgliter} totaltank={dashData.totaltank} />
 
       <Title className="text-xl mb-5">Historie</Title>
 
