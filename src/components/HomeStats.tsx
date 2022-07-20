@@ -5,6 +5,8 @@ interface PropTypes {
   price: string;
   totalpaid: string;
   avgdist: string;
+  avgliter: string;
+  totaltank: string;
 }
 
 function HomeStats(data: PropTypes) {
@@ -32,10 +34,10 @@ function HomeStats(data: PropTypes) {
         <div className="flex justify-around items-center py-2">
           <div className="text-center w-1/2 border-r border-slate-400">
             <div className="text-sm text-rose-500 dark:text-rose-200">
-              zaplaceno celkem
+              průměrně natankováno
             </div>
-            <div className="text-3xl font-bold">{data.totalpaid}</div>
-            <div className="text-xs text-zinc-400">czk</div>
+            <div className="text-3xl font-bold">{data.avgliter}</div>
+            <div className="text-xs text-zinc-400">l</div>
           </div>
           <div className="text-center w-1/2">
             <div className="text-sm text-rose-500 dark:text-rose-200">
@@ -43,6 +45,24 @@ function HomeStats(data: PropTypes) {
             </div>
             <div className="text-3xl font-bold">{data.avgdist}</div>
             <div className="text-xs text-zinc-400">km</div>
+          </div>
+        </div>
+      </div>
+      <div className="shadow-card rounded-xl w-full my-5 bg-violet-200 bg-opacity-10 dark:bg-opacity-20">
+        <div className="flex justify-around items-center py-2">
+          <div className="text-center w-1/2 border-r border-slate-400">
+            <div className="text-sm text-violet-500 dark:text-rose-200">
+              celkem nádrží
+            </div>
+            <div className="text-3xl font-bold">{data.totalpaid}</div>
+            <div className="text-xs text-zinc-400">czk</div>
+          </div>
+          <div className="text-center w-1/2">
+            <div className="text-sm text-violet-500 dark:text-rose-200">
+              průměrný dojezd
+            </div>
+            <div className="text-3xl font-bold">{data.totaltank}</div>
+            <div className="text-xs text-zinc-400"></div>
           </div>
         </div>
       </div>
