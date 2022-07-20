@@ -12,7 +12,7 @@ interface PropTypes {
 function HomeStats(data: PropTypes) {
   return (
     <div className="w-full">
-      <div className="shadow-card rounded-xl w-full mt-5 mb-2 bg-teal-200 bg-opacity-10 dark:bg-opacity-20">
+      <div className="shadow-card rounded-xl w-full mt-5 mb-4 bg-teal-200 bg-opacity-10 dark:bg-opacity-20">
         <div className="flex justify-around items-center py-2">
           <div className="text-center w-1/2 border-r border-slate-400">
             <div className="text-sm text-teal-500 dark:text-teal-200">
@@ -30,7 +30,7 @@ function HomeStats(data: PropTypes) {
           </div>
         </div>
       </div>
-      <div className="shadow-card rounded-xl w-full mb-2 bg-rose-200 bg-opacity-10 dark:bg-opacity-20">
+      <div className="shadow-card rounded-xl w-full mb-4 bg-rose-200 bg-opacity-10 dark:bg-opacity-20">
         <div className="flex justify-around items-center py-2">
           <div className="text-center w-1/2 border-r border-slate-400">
             <div className="text-sm text-rose-500 dark:text-rose-200">
@@ -48,7 +48,7 @@ function HomeStats(data: PropTypes) {
           </div>
         </div>
       </div>
-      <div className="shadow-card rounded-xl w-full mb-5 bg-violet-200 bg-opacity-10 dark:bg-opacity-20">
+      <div className="shadow-card rounded-xl w-full mb-10 bg-violet-200 bg-opacity-10 dark:bg-opacity-20">
         <div className="flex justify-around items-center py-2">
           <div className="text-center w-1/2 border-r border-slate-400">
             <div className="text-sm text-violet-500 dark:text-rose-200">
