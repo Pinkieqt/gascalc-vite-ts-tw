@@ -47,8 +47,8 @@ function Home() {
       price: (tmpPrice / data.length).toFixed(2),
       totalpaid: (tmpPaid).toFixed(0),
       avgdist: (tmpDist / (data.length - zeroCounter)).toFixed(0),
-      avgliter: (tmpLiter).toFixed(0),
-      totaltank: data.length,
+      avgliter: (tmpLiter).toFixed(2),
+      totaltank: (data.length).toFixed(0),
     });
   }
 
