@@ -30,26 +30,24 @@ function HomeStats(data: PropTypes) {
           </div>
         </div>
       </div>
-      {/*
       <div className="shadow-card rounded-xl w-full mb-3 bg-rose-200 bg-opacity-10 dark:bg-opacity-20">
         <div className="flex justify-around items-center py-2">
           <div className="text-center w-1/2 border-r border-rose-500 dark:border-rose-200">
             <div className="text-sm text-rose-500 dark:text-rose-200">
-              průměrně natankováno
+              celkem ujeto
             </div>
             <div className="text-3xl font-bold">{data.avgliter}</div>
-            <div className="text-xs text-zinc-400">l</div>
+            <div className="text-xs text-zinc-400">km</div>
           </div>
           <div className="text-center w-1/2">
             <div className="text-sm text-rose-500 dark:text-rose-200">
-              průměrný dojezd
+              celkem natankováno
             </div>
             <div className="text-3xl font-bold">{data.avgdist}</div>
-            <div className="text-xs text-zinc-400">km</div>
+            <div className="text-xs text-zinc-400">l</div>
           </div>
         </div>
       </div>
-      */}
       <div className="shadow-card rounded-xl w-full mb-10 bg-violet-200 bg-opacity-10 dark:bg-opacity-20">
         <div className="flex justify-around items-center py-2">
           <div className="text-center w-1/2 border-r border-violet-500 dark:border-violet-200">
