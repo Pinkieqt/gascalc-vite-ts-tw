@@ -36,14 +36,14 @@ function HomeStats(data: PropTypes) {
             <div className="text-sm text-rose-500 dark:text-rose-200">
               celkem ujeto
             </div>
-            <div className="text-3xl font-bold">{data.avgliter}</div>
+            <div className="text-3xl font-bold">{data.avgdist}</div>
             <div className="text-xs text-zinc-400">km</div>
           </div>
           <div className="text-center w-1/2">
             <div className="text-sm text-rose-500 dark:text-rose-200">
               celkem natankováno
             </div>
-            <div className="text-3xl font-bold">{data.avgdist}</div>
+            <div className="text-3xl font-bold">{data.avgliter}</div>
             <div className="text-xs text-zinc-400">l</div>
           </div>
         </div>
