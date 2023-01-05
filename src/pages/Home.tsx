@@ -119,8 +119,9 @@ function Home() {
           if (
             data.indexOf(el) < currentPage * 10 &&
             data.indexOf(el) > currentPage * 10 - 11 &&
-            el.date.toDate().getMonth() == new Date().getMonth() &&
-            el.date.toDate().getFullYear() == new Date().getFullYear()
+            el.date.toDate().getMonth() == new Date().getMonth() 
+            // &&
+            //el.date.toDate().getFullYear() == new Date().getFullYear()
           ) {
             return returnCard(el);
           }
@@ -138,8 +139,9 @@ function Home() {
           if (
             data.indexOf(el) < currentPage * 10 &&
             data.indexOf(el) > currentPage * 10 - 11 &&
-            el.date.toDate().getMonth() == new Date().getMonth() - 1 &&
-            el.date.toDate().getFullYear() == new Date().getFullYear()
+            el.date.toDate().getMonth() == new Date().getMonth() - 1 
+            // &&
+            // el.date.toDate().getFullYear() == new Date().getFullYear()
           ) {
             return returnCard(el);
           }
@@ -157,8 +159,9 @@ function Home() {
           if (
             data.indexOf(el) < currentPage * 10 &&
             data.indexOf(el) > currentPage * 10 - 11 &&
-            el.date.toDate().getMonth() < new Date().getMonth() - 1 &&
-            el.date.toDate().getFullYear() == new Date().getFullYear()
+            el.date.toDate().getMonth() < new Date().getMonth() - 1 
+            // &&
+            // el.date.toDate().getFullYear() == new Date().getFullYear()
           ) {
             return returnCard(el);
           }
